@@ -1,0 +1,9 @@
+[user]
+	name = jpy-git
+	email = josephyoung.jpy@gmail.com
+[init]
+	defaultBranch = main
+[alias]
+	hist = log --oneline --graph --decorate --all
+[pull]
+	rebase = false
