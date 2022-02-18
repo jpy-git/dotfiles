@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# Install command-line tools using Homebrew.
+echo "Install Homebrew Packages"
 
 # Make sure we’re using the latest Homebrew.
 brew update
@@ -25,9 +25,6 @@ brew install make
 # Install a modern version of BASH.
 brew install bash
 brew install bash-completion2 # Auto-completion
-
-# Install a modern version of DASH.
-brew install dash
 
 # Install a modern version of ZSH.
 brew install zsh
@@ -71,7 +68,7 @@ brew install --cask visual-studio-code
 brew install --cask docker
 brew install --cask amethyst
 brew install --cask miniforge
-brew install --cask brave-browser
+# brew install --cask brave-browser
 
 # Remove outdated versions from the cellar.
 brew cleanup && brew autoremove

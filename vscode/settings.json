@@ -1,0 +1,39 @@
+{
+    "terminal.integrated.fontFamily": "MesloLGS NF",
+    "terminal.integrated.fontSize": 16,
+    "workbench.startupEditor": "none",
+    "explorer.confirmDelete": false,
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "security.workspace.trust.untrustedFiles": "open",
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter-notebook"
+    },
+    "python.showStartPage": false,
+    "notebook.cellToolbarLocation": {
+        "default": "right",
+        "jupyter-notebook": "left"
+    },
+    "editor.minimap.enabled": false,
+    "terminal.integrated.gpuAcceleration": "off",
+    "editor.renderWhitespace": "none",
+    "window.titleBarStyle": "native",
+    "customizeUI.titleBar": "frameless",
+    "customizeUI.activityBar": "bottom",
+    "customizeUI.activityBarHideSettings": true,
+    "editor.scrollbar.horizontal": "hidden",
+    "editor.scrollbar.vertical": "hidden",
+    "editor.folding": false,
+    "files.insertFinalNewline": true,
+    "security.workspace.trust.enabled": false,
+    "workbench.iconTheme": "vscode-icons",
+    "vsicons.dontShowNewVersionMessage": true,
+    "editor.bracketPairColorization.enabled": true,
+    "workbench.editor.enablePreview": false,
+    "workbench.statusBar.visible": false,
+    "explorer.confirmDragAndDrop": false,
+    "python.defaultInterpreterPath": "/opt/homebrew/opt/python@3.8/bin/python3.8",
+    "go.toolsManagement.autoUpdate": true,
+    "sql.linter.executablePath": "/opt/homebrew/bin/sqlfluff",
+    "sql.linter.run": "onSave"
+}
