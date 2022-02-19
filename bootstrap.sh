@@ -8,6 +8,11 @@ if ! command -v brew &> /dev/null
     echo
 fi
 
+# Install Rosetta
+echo "Install Rosetta"
+sudo softwareupdate --install-rosetta
+echo
+
 # Install Homebrew.
 if ! command -v brew &> /dev/null
     then
