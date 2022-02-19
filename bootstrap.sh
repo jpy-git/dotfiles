@@ -17,7 +17,7 @@ echo
 if ! command -v brew &> /dev/null
     then
     echo "Install Homebrew"
-    curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
     echo
 fi
 
