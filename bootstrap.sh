@@ -21,6 +21,15 @@ fi
 cd "$HOME/.config/powerlevel10k" && git pull > /dev/null
 cd ~-
 
+# Install AWS CLI.
+if ! command -v aws &> /dev/null
+    then
+    echo "Install AWS CLI"
+    curl "https://awscli.amazonaws.com/AWSCLIV2.pkg" -o "AWSCLIV2.pkg"
+    sudo installer -pkg AWSCLIV2.pkg -target /
+    echo
+fi
+
 # Create ~/bin if not exists.
 [[ ! -d "$HOME/bin" ]] && mkdir "$HOME/bin"
 
