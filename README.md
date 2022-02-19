@@ -1,12 +1,34 @@
 # dotfiles
 Collection of dotfiles and configs for my MacOS setup
 
-7) Configure iterm terminal:
-a) Navigate to iTerm2 > Preferences > Profiles
-b) In Window tab set window size: 
-Columns: 100, Rows: 24
-c) In Text tab set font size to 16
-d) In Keys tab select Presets > Natural Text Editing
-e) Navigate to iTerm2 > Preferences > General > Closing and unselect “Confirm Quit iTerm2” & “Confirm Closing multiple sessions”
+1.
+```console
+./bootstrap.sh
+```
 
+2.
+```console
+./scripts/brew.sh
+```
+
+3.
+```console
+./scripts/pip.sh
+```
+
+4.
+```console
+./scripts/macos.sh
+```
+
+5.
+```console
+p10k configure
+```
+and install `MesloLGS NF`
+
+6.
+Grant Full Disk Access to iTerm
+
+7.
 Use settings sync for vscode settings and extensions.

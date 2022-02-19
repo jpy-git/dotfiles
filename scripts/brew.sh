@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env zsh
 
 echo "Install Homebrew Packages"
 
@@ -24,7 +24,7 @@ brew install make
 
 # Install a modern version of BASH.
 brew install bash
-brew install bash-completion2 # Auto-completion
+brew install bash-completion@2 # Auto-completion
 
 # Install a modern version of ZSH.
 brew install zsh
@@ -66,9 +66,13 @@ brew install go
 brew install --cask iterm2
 brew install --cask visual-studio-code
 brew install --cask docker
-brew install --cask amethyst
 brew install --cask miniforge
-# brew install --cask brave-browser
+brew install --cask brave-browser
+brew install --cask amethyst
+
+# Apply Amethyst settings.
+[[ -f "${HOME}/Library/Preferences/com.amethyst.Amethyst.plist" ]] && rm "${HOME}/Library/Preferences/com.amethyst.Amethyst.plist"
+cp "./amethyst/com.amethyst.Amethyst.plist" "${HOME}/Library/Preferences"
 
 # Remove outdated versions from the cellar.
 brew cleanup && brew autoremove

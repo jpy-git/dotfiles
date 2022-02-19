@@ -46,8 +46,8 @@ alias ll='ls -l'
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
-# alias brave='open -na "Brave Browser"'
-alias neofetch="neofetch --iterm2 "$HOME/.config/neofetch/baby_penguin.png" --image_size none"
+alias brave='open -na "Brave Browser"'
+alias neofetch="neofetch --iterm2 \"$HOME/.config/neofetch/baby_penguin.png\" --image_size none"
 
 # History
 setopt hist_expire_dups_first

@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env zsh
 
 # Install xcode.
 if ! command -v xcode-select &> /dev/null
@@ -46,6 +46,7 @@ do
     rm -rf "$dst"
     ln -s "$src" "$dst"
 done
+source ~/.zshrc
 echo
 
 # Create ~/bin if not exists.
@@ -60,17 +61,3 @@ if ! command -v cht.sh &> /dev/null
     curl https://cheat.sh/:zsh > "$(brew --prefix)/share/zsh/site-functions/_cht"
     echo
 fi
-
-SCRIPTS_DIR="$(pwd -P)/scripts/"
-
-# Install Python packages.
-$SCRIPTS_DIR/pip.sh || exit 1
-echo
-
-# MacOS Preferences.
-$SCRIPTS_DIR/macos.sh || exit 1
-echo
-
-# Install Homebrew packages.
-$SCRIPTS_DIR/brew.sh || exit 1
-echo
