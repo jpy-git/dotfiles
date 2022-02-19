@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Install xcode.
-if ! command -v brew &> /dev/null
+if ! command -v xcode-select &> /dev/null
     then
     echo "Install xcode"
     xcode-select --install
@@ -32,19 +32,7 @@ if ! command -v aws &> /dev/null
     echo "Install AWS CLI"
     curl "https://awscli.amazonaws.com/AWSCLIV2.pkg" -o "AWSCLIV2.pkg"
     sudo installer -pkg AWSCLIV2.pkg -target /
-    echo
-fi
-
-# Create ~/bin if not exists.
-[[ ! -d "$HOME/bin" ]] && mkdir "$HOME/bin"
-
-# Install cht.sh.
-if ! command -v cht.sh &> /dev/null
-    then
-    echo "Install cht.sh"
-    curl https://cht.sh/:cht.sh > "$HOME/bin/cht.sh"
-    chmod +x  "$HOME/bin/cht.sh"
-    curl https://cheat.sh/:zsh > "$(brew --prefix)/share/zsh/site-functions/_cht"
+    rm AWSCLIV2.pkg
     echo
 fi
 
@@ -59,6 +47,19 @@ do
     ln -s "$src" "$dst"
 done
 echo
+
+# Create ~/bin if not exists.
+[[ ! -d "$HOME/bin" ]] && mkdir "$HOME/bin"
+
+# Install cht.sh.
+if ! command -v cht.sh &> /dev/null
+    then
+    echo "Install cht.sh"
+    curl https://cht.sh/:cht.sh > "$HOME/bin/cht.sh"
+    chmod +x  "$HOME/bin/cht.sh"
+    curl https://cheat.sh/:zsh > "$(brew --prefix)/share/zsh/site-functions/_cht"
+    echo
+fi
 
 SCRIPTS_DIR="$(pwd -P)/scripts/"
 
