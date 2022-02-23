@@ -46,7 +46,7 @@ alias ll='ls -l'
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
-alias brave='open -na "Brave Browser"'
+alias chrome='open -na "Google Chrome"'
 alias neofetch="neofetch --iterm2 \"$HOME/.config/neofetch/baby_penguin.png\" --image_size none"
 
 # History
@@ -55,7 +55,9 @@ setopt hist_ignore_dups
 setopt inc_append_history
 export HISTSIZE=1000
 export SAVEHIST=1000
-export HISTFILE="$HOME/.cache/zsh/history"
+HISTDIR="$HOME/.cache/zsh"
+[[ ! -e "$HISTDIR" ]] && mkdir "$HISTDIR"
+export HISTFILE="$HISTDIR/history"
 
 # Help
 unalias run-help 2> /dev/null

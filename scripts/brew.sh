@@ -67,7 +67,7 @@ brew install --cask iterm2
 brew install --cask visual-studio-code
 brew install --cask docker
 brew install --cask miniforge
-brew install --cask brave-browser
+brew install --cask google-chrome
 brew install --cask amethyst
 
 # Apply Amethyst settings.
