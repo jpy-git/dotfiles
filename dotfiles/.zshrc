@@ -45,6 +45,7 @@ source "$(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.z
 source "$(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
 source "$(brew --prefix)/etc/profile.d/z.sh"
 source "$HOME/.config/powerlevel10k/powerlevel10k.zsh-theme"
+eval "$(dircolors -b)" # export LS_COLORS
 
 # Aliases
 alias ..='cd ..'
@@ -53,6 +54,8 @@ alias ll='ls -l'
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
+alias diff='colordiff'
+alias tree='tree -C'
 alias chrome='open -na "Google Chrome"'
 alias neofetch="neofetch --iterm2 \"$HOME/.config/neofetch/baby_penguin.png\" --image_size none"
 

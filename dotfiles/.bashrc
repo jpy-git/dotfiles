@@ -17,6 +17,8 @@ alias ll='ls -Ahl'
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
+alias diff='colordiff'
+alias tree='tree -C'
 alias chrome='open -na "Google Chrome"'
 alias neofetch="neofetch --iterm2 \"$HOME/.config/neofetch/baby_penguin.png\" --image_size none"
 
