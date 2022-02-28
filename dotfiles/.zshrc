@@ -6,7 +6,14 @@ fi
 # Path
 typeset -U PATH path # Remove duplicates in PATH
 
-eval "$(unset HOMEBREW_SHELLENV_PREFIX && /opt/homebrew/bin/brew shellenv)" # Homebrew
+# Add appropriate Homebrew to PATH
+if [[ $(arch) == arm64 ]]; then
+  HOMEBREW_PREFIX="/opt/homebrew"
+else
+  HOMEBREW_PREFIX="/usr/local"
+fi
+
+eval "$(unset HOMEBREW_SHELLENV_PREFIX && $HOMEBREW_PREFIX/bin/brew shellenv)"
 
 export GOPATH="$HOME/go" # Go
 export GOROOT="$(brew --prefix golang)/libexec"
@@ -83,14 +90,14 @@ complete -C '/usr/local/bin/aws_completer' aws
 # Conda
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/opt/homebrew/Caskroom/miniforge/base/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+__conda_setup="$(\"$(brew --prefix)/Caskroom/miniforge/base/bin/conda\" 'shell.zsh' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "/opt/homebrew/Caskroom/miniforge/base/etc/profile.d/conda.sh" ]; then
-        . "/opt/homebrew/Caskroom/miniforge/base/etc/profile.d/conda.sh"
+    if [ -f "$(brew --prefix)/Caskroom/miniforge/base/etc/profile.d/conda.sh" ]; then
+        . "$(brew --prefix)/Caskroom/miniforge/base/etc/profile.d/conda.sh"
     else
-        export PATH="/opt/homebrew/Caskroom/miniforge/base/bin:$PATH"
+        export PATH="$(brew --prefix)/Caskroom/miniforge/base/bin:$PATH"
     fi
 fi
 unset __conda_setup
