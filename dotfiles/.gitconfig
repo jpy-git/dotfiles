@@ -7,3 +7,5 @@
 	hist = log --oneline --graph --decorate --all
 [pull]
 	rebase = false
+[core]
+	excludesfile = ~/.gitignore_global
