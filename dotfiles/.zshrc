@@ -74,9 +74,12 @@ unalias run-help 2> /dev/null
 autoload run-help
 
 # Enable auto-completion
-eval "$(python3.10 -m pip completion --zsh)"
+ZSH_DIR="$HOME/.config/.zsh"
+[[ ! -e "$ZSH_DIR" ]] && mkdir "$ZSH_DIR"
+python3.10 -m pip completion --zsh > "${ZSH_DIR}/.pip-completion.zsh"
+fpath+="$ZSH_DIR"
 chmod -R go-w "$(brew --prefix)/share"
-fpath=("$(brew --prefix)/share/zsh/site-functions" $fpath)
+fpath+="$(brew --prefix)/share/zsh/site-functions"
 autoload bashcompinit && bashcompinit
 autoload -Uz compinit && compinit -u
 zstyle ':completion:*' menu select
